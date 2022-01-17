@@ -16,107 +16,110 @@
       </q-avatar>
 
       <q-item-label class="text-subtitle1">
-                  <strong> Cels </strong>
-                  <span class="text-grey-7">@cels </span>     
+        <strong> Cels </strong>
+        <span class="text-grey-7">@cels </span>
       </q-item-label>
-
     </q-item-section>
 
-    <div class="row ">
-    <i class="fas fa-map-marker-alt q-ml-xl q-my-md"></i> 
-    <q-item-label class="text-subtitle1 q-ml-xs q-mt-md" > Trinidad and Tobago  </q-item-label>
-    <i class="fas fa-birthday-cake q-ml-xl q-my-md"></i> 
-    <q-item-label class="text-subtitle1 q-ml-xs q-mt-md" >Born January 11th, 2000  </q-item-label>
+    <div class="row">
+      <i class="fas fa-map-marker-alt q-ml-xl q-my-md"></i>
+      <q-item-label class="text-subtitle1 q-ml-xs q-mt-md">
+        Trinidad and Tobago
+      </q-item-label>
+      <i class="fas fa-birthday-cake q-ml-xl q-my-md"></i>
+      <q-item-label class="text-subtitle1 q-ml-xs q-mt-md"
+        >Born January 11th, 2000
+      </q-item-label>
     </div>
 
     <div class="row justify-between">
-    <q-btn  class="q-ma-md text-capitalize" label="Tweets" />
-    <q-btn  class="q-ma-md text-capitalize" label="Tweet & Replies" />
-    <q-btn  class="q-ma-md text-capitalize" label="Media" />
-    <q-btn  class="q-ma-md text-capitalize" label="Likes" />
+      <q-btn class="q-ma-md text-capitalize" label="Tweets" />
+      <q-btn class="q-ma-md text-capitalize" label="Tweet & Replies" />
+      <q-btn class="q-ma-md text-capitalize" label="Media" />
+      <q-btn class="q-ma-md text-capitalize" label="Likes" />
     </div>
-    
 
     <q-separator class="q-pt-xs"> </q-separator>
 
-         <div class="q-pa-md q-gutter-md">
-        <q-list separator>
-          <transition-group
-            appear
-            enter-active-class="animated fadeIn slow"
-            leave-active-class="animated fadeOut slower"
-          >
-            <q-item v-for="tweet in tweets" :key="tweet.date" class="q-py-md">
-              <q-item-section avatar>
-                <q-avatar top>
-                  <img
-                    src="https://pbs.twimg.com/media/EMb62bpW4AA43Er?format=jpg&name=small"
-                  />
-                </q-avatar>
-              </q-item-section>
+    <div class="q-pa-md q-gutter-md">
+      <q-list separator>
+        <transition-group
+          appear
+          enter-active-class="animated fadeIn slow"
+          leave-active-class="animated fadeOut slower"
+        >
+          <q-item v-for="tweet in tweets" :key="tweet.date" class="q-py-md">
+            <q-item-section avatar>
+              <q-avatar top>
+                <img
+                  src="https://pbs.twimg.com/media/EMb62bpW4AA43Er?format=jpg&name=small"
+                />
+              </q-avatar>
+            </q-item-section>
 
-              <q-item-section>
-                <q-item-label class="text-subtitle1">
-                  <strong> Cels </strong>
-                  <span class="text-grey-7"
-                    >@cels <br class="lt-md" />
-                    &bull; {{ tweet.date }}</span
-                  >
-                </q-item-label>
+            <q-item-section>
+              <q-item-label class="text-subtitle1">
+                <strong> Cels </strong>
+                <span class="text-grey-7"
+                  >@cels <br class="lt-md" />
+                  &bull; {{ tweet.date }}</span
+                >
+              </q-item-label>
 
-                <q-item-label class="tweetContent text-body1">
-                  {{ tweet.content }}
-                </q-item-label>
+              <q-item-label class="tweetContent text-body1">
+                {{ tweet.content }}
+              </q-item-label>
 
-                <div class="row justify-between q-mt-sm">
-                  <q-btn
-                    flat
-                    round
-                    color="grey"
-                    icon="far fa-comment"
-                    size="sm"
-                  />
-                  <q-btn
-                    flat
-                    round
-                    :color="tweet.retweeted ? 'green' : 'grey'"
-                    icon="fas fa-retweet"
-                    size="sm"
-                    @click="reTweeted(tweet)"
-                  />
-                  <q-btn
-                    flat
-                    round
-                    :color="tweet.liked ? 'pink' : 'grey'"
-                    :icon="tweet.liked ? 'fas fa-heart' : 'favorite_border'"
-                    size="sm"
-                    @click="likeTweet(tweet)"
-                  />
-                  <q-btn
-                    @click="deleteTweet(tweet)"
-                    flat
-                    round
-                    color="grey"
-                    icon="far fa-trash-alt"
-                    size="sm"
-                  />
-                </div>
-              </q-item-section>
-            </q-item>
+              <div class="row justify-between q-mt-sm">
+                <q-btn
+                  flat
+                  round
+                  color="grey"
+                  icon="far fa-comment"
+                  size="sm"
+                />
+                <q-btn
+                  flat
+                  round
+                  :color="tweet.retweeted ? 'green' : 'grey'"
+                  icon="fas fa-retweet"
+                  size="sm"
+                  @click="reTweeted(tweet)"
+                />
+                <q-btn
+                  flat
+                  round
+                  :color="tweet.liked ? 'pink' : 'grey'"
+                  :icon="tweet.liked ? 'fas fa-heart' : 'favorite_border'"
+                  size="sm"
+                  @click="likeTweet(tweet)"
+                />
+                <q-btn
+                  @click="deleteTweet(tweet)"
+                  flat
+                  round
+                  color="grey"
+                  icon="far fa-trash-alt"
+                  size="sm"
+                />
+              </div>
+            </q-item-section>
+          </q-item>
 
-            <q-separator inset="item" />
-          </transition-group>
-        </q-list>
-      </div>
-
+          <q-separator inset="item" />
+        </transition-group>
+      </q-list>
+    </div>
   </q-page>
 </template>
 
 <script>
+import { formatDistance } from "date-fns";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "ProfilePage",
+
   data() {
     return {
       newTwitterContent: "",
@@ -199,7 +202,7 @@ export default defineComponent({
       }
     },
   },
-  filters: {
+  computed: {
     relativeDate(value) {
       return formatDistance(value, new Date());
     },
