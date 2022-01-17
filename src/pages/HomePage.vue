@@ -199,9 +199,14 @@ export default defineComponent({
       }
     },
   },
-  filters: {
-    relativeDate(value) {
-      return formatDistance(value, new Date());
+
+  computed: {
+    relativeDate(tweet) {
+      let dateOfTweet = tweet.date;
+      let index = this.tweets.findIndex(
+        (tweet) => tweet.date === dateOfLikedTweet
+      );
+      return formatDistance(this.newTwitterContent[index].date, new Date());
     },
   },
 });

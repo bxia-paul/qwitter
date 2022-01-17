@@ -19,7 +19,14 @@
       bordered
       :width="200"
     >
-      <q-icon name="fas fa-dove" color="primary" size="sm" class="q-pl-xl" />
+      
+      <q-list class="column items-end q-py-md">
+        <q-item clickable v-ripple to="/">
+          <q-item-section avatar>
+            <q-icon color="primary" name="fas fa-dove" size="md" />
+          </q-item-section>
+        </q-item>
+      </q-list>
 
       <q-list class="column items-end">
         <q-item clickable v-ripple to="/">
@@ -85,7 +92,7 @@
       <q-list padding>
         <q-item>
           <q-item-section>
-            <q-item-label overline class="text-weight-bold"
+            <q-item-label overline class="text-weight-bolder"
               >Trends for you</q-item-label
             >
             <q-item-label> U.W.I </q-item-label>
@@ -105,9 +112,9 @@
       <q-list padding>
         <q-item>
           <q-item-section>
-            <q-item-label> U.W.I </q-item-label>
+            <q-item-label> Trinidad </q-item-label>
             <q-item-label caption
-              >New professional promotions at U.W.I
+              >Medical drug supply shortage hits Trinidad and Tobago
             </q-item-label>
           </q-item-section>
 
@@ -122,9 +129,9 @@
       <q-list padding>
         <q-item>
           <q-item-section>
-            <q-item-label> U.W.I </q-item-label>
+            <q-item-label> COVID-19 </q-item-label>
             <q-item-label caption
-              >New professional promotions at U.W.I
+              > new strain of Covid-19 exists that combines characteristics of the delta and omicron variants.
             </q-item-label>
           </q-item-section>
 
